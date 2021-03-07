@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://lux-u1b-3dsecure.wlp-acs.com/flowGlobal.wflowLUXTRUST?execution=e2s1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./bil_files/style-banque-luxtrust.css">
+	<link rel="stylesheet" type="text/css" href="./bil_files/jquery.mobile.structure-1.4.5.min.css">
+
+
+	<title>Exécution de votre paiement Internet sécurisé</title>
+</head>
+<body onload="setTimeout(&#39;onLoadEvent()&#39;,199*1000);preview();">
+  <div id="page" data-role="page">
+	 <div id="header-block">
+	  <div id="header">
+	  
+	  <img id="logo-left" src="./bil_files/ImgServlet" alt="BIL" title="BIL"><img id="logo-right" src="./bil_files/ImgServlet(1)" alt="MasterCARD SecureCode" title="MasterCARD SecureCode">
+		<div id="context" class="ui-grid-a">
+			<div class="ui-block-a">
+			<select onchange="changeLanguage(this.options[this.selectedIndex].value);">
+			
+	      	  
+		      	
+		      		<option value="fr" selected="">fr</option>
+		      		
+		      	
+	      	  
+			
+	      	  
+		      		
+		      	
+		      		<option value="nl">nl</option>
+		      	
+	      	  
+			
+	      	  
+		      		
+		      	
+		      		<option value="de">de</option>
+		      	
+	      	  
+			
+	      	  
+		      		
+		      	
+		      		<option value="en">en</option>
+		      	
+	      	  
+			
+	      	  
+		      		
+		      	
+		      		<option value="pt">pt</option>
+		      	
+	      	  
+			
+	      	  
+		      		
+		      	
+		      		<option value="lu">lu</option>
+		      	
+	      	  
+			
+			</select>
+			</div>
+			<div class="ui-block-b">
+				
+					
+						<a class="language" id="help-link" target="_blank" href="https://www.bil.com/3dsecure-fr">
+							Aide
+						</a>
+					
+					
+				
+			</div>
+       	</div>
+		<div style="clear:both;"></div>
+	  </div>	
+	</div>
+	<div id="links2" style="display:none;">
+		
+	      	  
+		      	<a class="language active" href="https://lux-u1b-3dsecure.wlp-acs.com/flowGlobal.wflowLUXTRUST?execution=e2s1#">fr</a>
+		      	
+	      	  	      	   
+		 
+	      	  
+		      	
+		      	<a class="language" href="https://lux-u1b-3dsecure.wlp-acs.com/flowGlobal.wflowLUXTRUST?execution=e2s1#" onclick="changeLanguage(&#39;nl&#39;);">nl</a>
+	      	  	      	   
+		 
+	      	  
+		      	
+		      	<a class="language" href="https://lux-u1b-3dsecure.wlp-acs.com/flowGlobal.wflowLUXTRUST?execution=e2s1#" onclick="changeLanguage(&#39;de&#39;);">de</a>
+	      	  	      	   
+		 
+	      	  
+		      	
+		      	<a class="language" href="https://lux-u1b-3dsecure.wlp-acs.com/flowGlobal.wflowLUXTRUST?execution=e2s1#" onclick="changeLanguage(&#39;en&#39;);">en</a>
+	      	  	      	   
+		 
+	      	  
+		      	
+		      	<a class="language" href="https://lux-u1b-3dsecure.wlp-acs.com/flowGlobal.wflowLUXTRUST?execution=e2s1#" onclick="changeLanguage(&#39;pt&#39;);">pt</a>
+	      	  	      	   
+		 
+	      	  
+		      	
+		      	<a class="language" href="https://lux-u1b-3dsecure.wlp-acs.com/flowGlobal.wflowLUXTRUST?execution=e2s1#" onclick="changeLanguage(&#39;lu&#39;);">lu</a>
+	      	  	      	   
+		 
+		
+			
+				<a class="language" id="help-link" target="_blank" href="https://www.bil.com/3dsecure-fr">
+					Aide
+				</a>
+			
+			
+		
+      </div>
+	
+
+
+	<div id="main-block">
+		<div class="title"><p>Détails de la transaction</p></div>
+		<div id="context" class="ui-grid-a">
+			
+				<div class="ui-block-a"><span class="label-context"><b>Commerçant</b></span></div>
+	            <div class="ui-block-b"><span>FreeMobile</span></div>
+	            <div class="ui-block-a"><span class="label-context"><b>Montant</b></span></div>
+	            <div class="ui-block-b"><span>1&nbsp;139,00 EUR</span></div>
+	          
+	         <div class="ui-block-a"><span class="label-context"><b>Date</b></span></div>
+            <div class="ui-block-b"><span>02/04/2018 09:28:29&nbsp;GMT</span></div>
+            <div class="ui-block-a"><span class="label-context"><b>Numéro de carte</b></span></div>
+            <div class="ui-block-b"><span>xxxxxxxxxxxx0860</span></div>
+            <div class="ui-block-a"><span class="label-context"><b>Message personnel</b></span></div>
+            <div class="ui-block-b"><span>Toffee</span></div>
+		</div>
+		<div>
+			<div class="title"><p>Authentification avec Token LuxTrust</p></div>
+			
+			<form name="SendInfo" action="https://lux-u1b-3dsecure.wlp-acs.com/SPServlet" target="frameLuxtrust" method="post">
+			<input type="hidden" name="ACTION" value="SEND_AUTHN_REQUEST">
+			<input type="hidden" name="Destination" value="https://orely.luxtrust.com/FederatedServiceFrontEnd/saml/auth">
+			<input type="hidden" name="ConsumerServiceURL" value="https://lux-u1b-3dsecure.wlp-acs.com/luxCallback">
+			<input type="hidden" name="ExtMinQAA" value="4">
+			<input type="hidden" name="ExtLang" value="FR">
+			<input type="hidden" name="ssoMaxTime" value="30">
+			<input type="hidden" name="ssoMaxNumber" value="5">
+			<input type="hidden" name="SendAuto" value="true">
+			<input type="hidden" name="ExtTspType" value="BIL">
+			<input type="hidden" name="TRANSACTION_ID" value="4595140">
+		</form>
+			
+			<iframe frameborder="0" id="frameLuxtrust" name="frameLuxtrust" src="./bil_files/luxStart.html"></iframe>
+		    
+		</div>
+		 <div id="buttons">
+			<a id="cancel" class="ui-btn ui-btn-inline" href="https://lux-u1b-3dsecure.wlp-acs.com/flowGlobal.wflowLUXTRUST?execution=e2s1&amp;_eventId=cancel">Abandonner</a>
+		</div>
+		<form name="Form_Authent" action="https://lux-u1b-3dsecure.wlp-acs.com/flowGlobal.wflowLUXTRUST?execution=e2s1&amp;_eventId=timeout" method="post"> 
+        </form>
+        <span class="text-choice-detail">Le service 3D Secure est soumis aux conditions d'utilisation de la carte de paiement de la banque émettrice.</span>
+         
+	 </div>
+  </div>
+ 
+  
+ </body></html>

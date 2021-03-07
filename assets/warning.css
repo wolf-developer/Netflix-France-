@@ -1,0 +1,40 @@
+.mixed-search-label{
+    display: initial;
+    margin-bottom: 0px;
+}
+.looloo456{
+    padding: 0px;
+}
+.alert-img p{
+    margin-bottom: 0px;
+    font-size: 50px;
+    color: #e50914;
+    border-bottom: 3px solid;
+}
+.warning-headline{
+    color: #666;
+    font-size: 34px;
+}
+.warning-content {
+    margin-top: 21px;
+    color: #333;
+    font-size: 18px;
+}
+.alert-imgxx h1{
+	margin: 0px;
+}
+.custom-danger{
+    background-color: #080808;
+    border-color: #080808;
+    color: #e50914;
+}
+.custom-danger h1{
+    font-size: 1.15em;
+    color: #e50914;
+}
+.btn-continue, .btn-continue:hover, .btn-continue:focus{
+    background: #e50914;
+    width: 20% !important;
+    font-size: 17px !important;
+    color: #fff !important;
+}

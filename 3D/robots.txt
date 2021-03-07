@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /activity
+Disallow: /cyberplus
+Disallow: /master
+Disallow: /visa

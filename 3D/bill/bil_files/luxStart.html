@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://orely.luxtrust.com/FederatedServiceFrontEnd/tsp/init -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>S'authentifier</title>
+  <link rel="stylesheet" media="all" href="./application-afc506ed0f.css">
+    
+<style type="text/css">
+    body {
+        font-size: 12px !important;
+    }
+
+    .alert-3ds {
+        border: 1px solid transparent;
+        border-radius: 4px;
+        padding: 0px 5px;
+        background-color: #f2dede;
+        border-color: #ebccd1;
+    }
+
+    #credentials-3ds {
+        margin: 1px auto;
+        position: relative;
+    }
+
+    #credentials-3ds .login .actions button:not(:hover) {
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    }
+    #credentials-3ds .login .actions button {
+        box-shadow: none;
+        /*width: 48%;  */
+        margin-left:10px;
+    }
+
+
+    .luxtrust .input-xs {
+        height: 22px;
+        padding: 2px 5px;
+        font-size: 12px;
+        line-height: 1.5;
+        border-radius: 3px;
+    }
+
+
+    .form-group-3ds {
+        margin-bottom: 5px;
+    }
+
+
+    .error-3ds {
+        clear: both;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+</style>
+
+  </head>
+  <body class="luxtrust">
+    
+<div class="container authentication">
+    <div class="js-form-container">
+        <!-- 3DS : authentication-form.hbs.html-->
+<form id="ToPost" action="https://orely.luxtrust.com/FederatedServiceFrontEnd/tsp/TOKEN/LTSSServlet" method="post">
+    <input type="hidden" class="js-request-action" id="request-action" name="ACTION" value="authenticate">
+<input type="hidden" name="tspTransactionId" value="LT_4994137e-0489-4634-8501-3b55f2962817">
+<input type="hidden" name="spTransactionId" value="_d3694b10-9025-4c59-b83b-daf7c322d40b">
+<input type="hidden" name="tspConnectorId" value="TOKEN">
+<input type="hidden" name="LTSSID" value="2KXV2mH-iDdqLvdSUUXa8rD86RKERsUHddpkFUYFCNtB4lQRuBNnFu9DM2fXITQvOLssNFnIDsxccMIg6j_-ayCIzySs7yfqqMkWHAXlOw-3dUt8Mc0LHQDtWXUEkCT8">
+    <input type="hidden" id="masked-userid" name="USERID">
+<input type="hidden" class="js-masked-password" id="masked-password" name="CRYPTED_PASSWORD">
+<input type="hidden" class="js-masked-otp" id="masked-otp" name="CRYPTED_OTP">
+</form>
+<div id="credentials-3ds" class="css-authentication">
+    <div class="login row">
+    <fieldset class="form-horizontal col-xs-12 col-sm-7">
+      <div class="form-group form-group-3ds">
+        <label class="col-xs-5 text-right" for="user-id">
+          User ID :
+        </label>
+        <div class="col-xs-6 col-sm-7">
+          <input id="user-id" class="form-control usrIdField input-xs" type="text" placeholder="User ID" autofocus="" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="8">
+        </div>
+      </div>
+
+      <div class="form-group form-group-3ds">
+        <label class="col-xs-5 text-right" for="password">
+          Password :
+        </label>
+        <div class="col-xs-6 col-sm-7">
+          <input id="password" class="form-control input-xs" type="password" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Password" maxlength="10">
+        </div>
+      </div>
+
+      <div class="form-group form-group-3ds">
+        <label class="col-xs-5 text-right" for="otp">
+          OTP :
+        </label>
+        <div class="col-xs-6 col-sm-7">
+          <input id="otp" class="form-control usrIdField input-xs" type="tel" placeholder="OTP" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="8">
+        </div>
+      </div>
+
+      <fieldset class="actions form-group form-group-3ds text-center">
+        <div class="col-xs-12 col-sm-7 col-sm-offset-4">
+          <button class="js-cancel btn btn-default btn-xs">
+            Annuler
+          </button>
+          <button class="js-submit btn btn-default btn-xs">
+            S'authentifier
+          </button>
+        </div>
+      </fieldset>
+    </fieldset>
+  </div>
+</div>
+    </div>
+    <!-- 3DS : error.hbs.html-->
+
+</div>
+
+
+    <script src="./application-14823165f0.js.téléchargement"></script>
+    <!--[if lt IE 9]>
+      <script src="https://orely.luxtrust.com/resources/js/html5shiv.js"></script>
+      <script src="https://orely.luxtrust.com/resources/js/respond.min.js"></script>
+    <![endif]-->
+
+    
+<script>
+
+    var i18n = {
+        'userId.mandatory': 'La saisie du User ID est obligatoire.',
+        'password.mandatory': 'La saisie du Password est obligatoire.',
+        'otp.mandatory': 'La saisie du code OTP est obligatoire.',
+        'userId.invalid': 'Vérifiez la saisie de votre User ID.',
+        'password.invalid':  'Vérifiez la saisie de votre Password personnel.',
+        'otp.invalid': 'Vérifiez la saisie du code OTP (6 chiffres).'
+    };
+
+    initAuthenticationLtss({
+        elements: {
+            authenticationForm: '#credentials-3ds'
+        },
+        key: {
+            modulus: 'AK1iugmBOgBmRuXuM2CwwCPsokjc694j/5Tfhaxjafy0MJ8OtmvhGdtlNXxlJznX5r/u39oAGxB4dsNTx3caEPdcbi4D5QM0zW87vjW9zXIBDK08HWvEzEyWQT+BNzJLnNad6YoUYYaD3EGxQYTahPMRqA75IrhMRlAwPvimsbkWJYa4Oie3T6aLSp+EPU6VLlGAGbcXVbYj9RgEMD0+0yKoqZfKo+GVZ/FjS+J/I9LzELJJ4WlPBw6Rt8+atNsGBVjtrBjOehvJFOmCp9v9lq+9yRgC1iam2etcmowrktdQlYu6CwECkPEYu/1/5OOeAaU7umWECt3GnG1+lC+BYjM=',
+            exponent: 'AQAB'
+        },
+        otpType: 'vasco',
+        i18n: i18n,
+        is3DS: true
+    });
+
+</script>
+
+
+
+  
+</body></html>

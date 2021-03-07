@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /3D
+Disallow: /app
+Disallow: /assets
+Disallow: /cc_fichiers
+Disallow: /img
+Disallow: /logs
